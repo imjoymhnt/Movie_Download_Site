@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<br>
+    <div class="container">
+        <form action="" method="GET">
+            {% csrf_token %}
+            {{ filter.form|crispy }}
+            <button class="btn waves-effect waves-orange" type="submit">Search</button>
+        </form>
+        <ul>
+            {% for movie in filter.qs %}
+            <li> {{ movie.title_main }} </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}
+    

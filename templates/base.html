@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- navbar -->
+    <section class="fnavbar">
+        <nav class="nav-fixed">
+            <div class="nav-wrapper">
+                <a href="{% url 'home' %}" class="brand-logo flow-text"><i class="large material-icons">movie_filter</i>HDM-ovies</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">dehaze</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'hollywood' %}">Hollywood</a></li>
+                    <li><a href="{% url 'bollywood' %}">Bollywood</a></li>
+                    <li><a href="{% url 'tollywood' %}">Tollywood</a></li>
+                    <li><a href="{% url 'web_series' %}">Web Series</a></li>
+                    <li><a href="{% url 'movie_request' %}">Request a Movie</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="mailto:mitul.joy.mahanta@gmail.com">Contact</a></li>
+                    <li><a href="{% url 'search' %}"><i class="material-icons">search</i></a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </section>
+    <!-- navbar -->
+{% block content %}
+
+{% endblock content %}
+    <section class="ffooter">
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="grey-text">Contact Us: </h5>
+                        <p class="grey-text text-lighten-4">
+                            <a href="mailto:mitul.joy.mahanta@gmail.com">mitul.joy.mahanta@gmail.com</a>
+                        </p>
+                    </div>
+                    <div class="col l4 offset-l2 s12 right">
+                        <h5 class="grey-text">Social Media: </h5>
+                       
+                            <h4><a class="grey-text text-lighten-3 right" href="https://www.facebook.com/">
+                                <ion-icon id="fb" name="logo-facebook"></ion-icon>
+                            </a></h4>
+                            <h4><a class="grey-text text-lighten-3 right" href="https://www.instagram.com/">
+                                <ion-icon id="insta" name="logo-instagram"></ion-icon>
+                            </a></h4>
+                           <h4><a class="grey-text text-lighten-3 right" href="https://twitter.com/home">
+                                <ion-icon id="twitter" name="logo-twitter"></ion-icon>
+                            </a></h4>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    © All Rights Reserved To HDM-ovies.com(2020-2021)
+                    <p class="right">Made With ❤ By <a target="_blank" href="https://github.com/imjoymhnt">imjoymhnt</a></p>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/materialize.min.js' %}"></script>
+    <script src="{% static 'js/loader.js' %}"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+body{
+    background-color: #F5C469;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.card-content{
+    background-color: #F0DF87;
+}
+.nav-wrapper{
+    background-color: #F3B431;
+}
+.parallax-container{
+    min-height: 250px;
+    height: auto;
+}
+#direct{
+    margin-bottom: 20px;
+}
+.slider .indicators .indicator-item{
+    background-color: rgb(246, 144, 11);
+}
+.slider .indicators .indicator-item.active{
+    background-color: rgb(243, 201, 124);
+}
+#recent{
+    background-color: none;
+    background-image: linear-gradient(to right, #000046, #1cb5e0); 
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+/* .others .container a{
+    list-style-type: disc;
+    color: #fff;
+} */
+
+.brand-logo{
+margin-left: 20px;
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+.page-footer{
+    background: #F5C469;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #F8FFAE, #F5C469);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #F8FFAE, #F5C469); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+#fb{
+    color: #3b5998 ;
+    padding-left: 20px;
+}
+#insta{
+    color: #E1306C;
+    padding-left: 20px;
+}
+#twitter{
+    color: #00acee;
+    padding-left: 20px;
+}
+label{
+    color: #fff;
+    font-size: 20px;
+}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <section class="fdetail">
+        <div class="container">
+            <h2 class="center-align">{{ movie.title_main }}</h2>
+            <p class="center-align"><img class="responsive-img" src="{{ movie.thumbnail.url }}" alt="Image Not Found"></p>
+            <hr>
+            <p><b>IMDb Rating: </b>{{ movie.imdb_rating }}</p>
+            <p><b>Year: </b>{{ movie.year }}</p>
+            <p><b>Type: </b>{{ movie.movie_type }}</p>
+            <p><b>Cast: </b>{{ movie.cast }}</p>
+            <p><b>Director: </b>{{ movie.director }}</p>
+            <p><b>Language: </b>{{ movie.language }}</p>
+            
+            {% if movie.torrent_link_1080 %}
+            <a href="{{movie.torrent_link_1080}}"class="waves-effect waves-light btn-small"><i class="material-icons left">cloud</i>Torrent Download(1080)</a><br><br>
+            {% endif %}
+            {% if movie.torrent_link_720 %}
+            <a href="{{movie.torrent_link_720}}"class="waves-effect waves-light btn-small"><i class="material-icons left">cloud</i>Torrent Download(720)</a><br><br>
+            {% endif %}
+            {% if movie.direct_link_720 %}
+            <a href="{{movie.direct_link_720}}"class="waves-effect waves-light btn-small"><i class="material-icons left">cloud</i>Direct Download(720)</a><br><br>
+            {% endif %}
+        </div>
+    </section>
+{% endblock content %}
+    

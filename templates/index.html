@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="fslider">
+    <div class="slider">
+        <ul class="slides">
+            <li>
+                    <img class="responsive-img" src="{% static 'images/cool1.png' %}" alt="">
+                    <div class="caption center-align white-text">
+                        <h3>Cool Movie 1</h3>
+                        <h5 class="light text-lighten-3">Cool Movie 1 Details</h5>
+                    </div>
+                </li>
+            <li>
+                    <img class="responsive-img" src="{% static 'images/cool2.png' %}" alt="">
+                    <div class="caption center-align white-text">
+                        <h3>Cool Movie 1</h3>
+                        <h5 class="light text-lighten-3">Cool Movie 1 Details</h5>
+                    </div>
+                </li>
+            <li>
+                    <img class="responsive-img" src="{% static 'images/cool3.png' %}" alt="">
+                    <div class="caption center-align white-text">
+                        <h3>Cool Movie 1</h3>
+                        <h5 class="light text-lighten-3">Cool Movie 1 Details</h5>
+                    </div>
+                </li>
+        </ul>
+    </div>
+</section>
+<br>
+<section class="fparallax">
+    <div class="parallax-container">
+        <div class="parallax"><img src="{% static 'images/parallax.jpg' %}"></div>
+    </div>
+</section>
+<section class="flist">
+    <h3 class="center-align" id="recent">Recent movies</h3>
+    <hr>
+    <div class="row" style="padding-left: 50px; padding-right: 50px;">
+        
+        {% for movie in movie_list %}
+            
+        <div class="col s12 m4 l3">
+            <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="{{movie.thumbnail.url}}">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">{{ movie.title }}<i
+                            class="material-icons right">more_vert</i></span>
+                    <p><a href="{% url 'detail' pk=movie.pk %}">Download</a></p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">{{ movie.title_main }}<i class="material-icons right">close</i></span>
+                    <p><b>IMDb Rating: </b>{{ movie.imdb_rating }}</p>
+                    <p><b>Year: </b>{{ movie.year }}</p>
+                    <p><b>Type: </b>{{ movie.movie_type }}</p>
+                    <p><b>Cast: </b>{{ movie.cast }}</p>
+                    <p><b>Director: </b>{{ movie.director }}</p>
+                    <p><b>Language: </b>{{ movie.language }}</p>
+                    
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<section class="others">
+        <h3 class="center-align" id="recent">Categories</h3>
+        <hr>
+    <div class="container">
+        <ul>
+        <li><h5><a href="{% url 'hollywood' %}">Hollywood</a><br></h5></li>
+        <li><h5><a href="{% url 'hollywood' %}">Bollywood</a><br></h5></li>
+        <li><h5><a href="{% url 'hollywood' %}">Tollywood</a><br></h5></li>
+        <li><h5><a href="{% url 'hollywood' %}">Web Series</a><br></h5></li>
+        </ul>
+    </div>
+</section>
+
+{% endblock content %}
